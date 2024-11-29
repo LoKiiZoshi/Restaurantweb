@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #ffe4e1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+    }
+    h1 {
+        text-align: center;
+        color: rgb(255, 0, 255);
+        margin-bottom: 20px;
+    }
+    form {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        width: 350px;
+    }
+    form div {
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 8px;
+        color: rgb(255, 0, 255);
+        font-weight: bold;
+    }
+    input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid rgb(255, 0, 255);
+        border-radius: 5px;
+        font-size: 16px;
+        color: rgb(255, 0, 255);
+    }
+    button {
+        background-color: rgb(255, 0, 255);
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    button:hover {
+        background-color: #ff1493;
+    }
+    p {
+        color: rgb(255, 0, 255);
+        text-align: center;
+    }
+    a {
+        color: rgb(255, 0, 255);
+        text-decoration: none;
+        font-weight: bold;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+     .msg {
+        color: red;
+    }
+</style>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form action="/newuserregister" method="post">
+     <p class="msg">[[${msg}]]</p>
+        <div>
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" required>
+        </div>
+        <div>
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" required>
+        </div>
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Sign Up</button>
+        <p>Already have an account? <a href="/login">Login Now</a></p>
+    </form>
+</body>
+</html>

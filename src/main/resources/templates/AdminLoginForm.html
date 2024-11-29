@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #ffe4e1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        color: rgb(255, 0, 255); /* Adding magenta color to the body text */
+    }
+    h1 {
+        text-align: center;
+        color: rgb(255, 0, 255); /* Magenta color for the heading */
+        margin-bottom: 20px;
+    }
+    form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+    }
+    form div {
+        margin-bottom: 15px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        color: rgb(255, 0, 255); /* Magenta color for labels */
+    }
+    input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid rgb(255, 0, 255); /* Magenta border for input fields */
+        border-radius: 5px;
+        color: rgb(255, 0, 255); /* Magenta color for input text */
+    }
+    button {
+        background-color: rgb(255, 0, 255); /* Magenta background for the button */
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+    }
+    button:hover {
+        background-color: #ff1493; /* A darker shade of magenta for hover */
+    }
+    p {
+        color: rgb(255, 0, 255); /* Magenta color for the paragraph text */
+        text-align: center;
+    }
+    a {
+        color: rgb(255, 0, 255); /* Magenta color for links */
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    .msg {
+        color: red;
+    }
+</style>
+</head>
+<body>
+    <h1>Login Form</h1>
+    <form action="/adminlogin" method="post">
+        <p class="msg">[[${msg}]]</p>
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Sign In</button>
+    </form>
+   
+</body>
+</html>

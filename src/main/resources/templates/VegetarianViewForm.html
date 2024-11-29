@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>View Vegetarian Item</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>View Vegetarian Item</h1>
+        
+        <!-- View-only form -->
+        <div th:object="${Vmodel}">
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <p id="price" class="form-control-plaintext" th:text="*{price}"></p>
+            </div>
+            <div class="form-group">
+                <label for="vegetarianItem_Name">Vegetarian Food Name:</label>
+                <p id="vegetarianItem_Name" class="form-control-plaintext" th:text="*{vegetarianItem_Name}"></p>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <p id="quantity" class="form-control-plaintext" th:text="*{quantity}"></p>
+            </div>
+            <div class="form-group">
+                <label for="image">Current Image:</label>
+                <br>
+                <!-- Display current image if it exists -->
+                <div th:if="*{imageUrl}">
+                    <img th:src="@{${Vmodel.imageUrl}}" alt="Current Image" style="width: 100px; height: auto;">
+                </div>
+            </div>
+        </div>
+        
+      <a class="primary-btn cta-btn" href="/vegetarian/back" style="background-color: red; padding: 10px 20px; border-radius: 5px; color: white; text-decoration: none;">Back</a>
+
+       
+    </div>  
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>View Fruits Soup Item</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head> 
+<body>
+    <div class="container">
+        <h1>View Fruits Soup Item</h1>
+        <form enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <p id="price" class="form-control-plaintext" th:text="${Fmodel.price}"></p>
+            </div>
+            <div class="form-group">
+                <label for="FruitShoup_Nmae">Fruit and Soup Name:</label>
+                <p id="FruitShoup_Nmae" class="form-control-plaintext" th:text="${Fmodel.FruitShoup_Nmae}"></p>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <p id="quantity" class="form-control-plaintext" th:text="${Fmodel.quantity}"></p>
+            </div>
+            <div class="form-group">
+                <label for="image">Current Image:</label>
+                <br>
+                <div th:if="${Fmodel.imageUrl}">
+                    <img th:src="@{${Fmodel.imageUrl}}" alt="Current Image" style="width: 100px; height: auto;">
+                </div>
+                
+            </div>
+            <a class="primary-btn cta-btn" href="/soupandfruits/Back" style="background-color: red; padding: 10px 20px; border-radius: 5px; color: white; text-decoration: none;">Back</a>
+        </form>
+        <p th:text="${message}" class="mt-3"></p>
+    </div>
+</body>
+</html>

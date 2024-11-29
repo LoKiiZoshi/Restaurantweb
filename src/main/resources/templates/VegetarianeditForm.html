@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Edit Product</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Edit Product</h1>
+        <!-- Form with enctype attribute added to support file uploads -->
+        <form action="/vegetarian/update" method="post" th:object="${Vmodel}" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" class="form-control" th:field="*{price}" step="0.01" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="vegetarianItem_Name">Vegetarian Food Name:</label>
+                <input type="text" id="vegetarianItem_Name" name="vegetarianItem_Name" class="form-control" th:field="*{vegetarianItem_Name}" required>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" class="form-control" th:field="*{quantity}" min="1" required>
+            </div>
+            <div class="form-group">
+                <label for="image">Change Image:</label>
+                <input type="file" id="image" name="image" accept="image/*" class="form-control-file">
+                <br>
+                <!-- Display current image if it exists -->
+                <div th:if="*{imageUrl}">
+                    <img th:src="@{${Vmodel.imageUrl}}" alt="Current Image" style="width: 100px; height: auto;">
+                </div>
+            </div>
+            <input type="hidden" name="id" th:field="*{id}">
+            <input type="submit" value="Update" class="btn btn-success">
+        </form>
+        <p th:text="${message}" class="mt-3"></p>
+    </div>
+</body>
+</html>
